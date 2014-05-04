@@ -1,0 +1,24 @@
+.todoList {
+	margin-top: 40px;	
+}
+
+.todoList div {
+	margin-top: 10px;
+	border-bottom: solid 1px #eee;
+	padding-bottom: 10px;
+	padding-left: 20px;
+
+}
+
+.todoList div .content{
+	width: 80%;
+	display: inline-block;
+	border: none;	
+}
+
+.todoList div .actions{
+	width: 20%;
+	display: inline-block;
+	border: none;	
+	vertical-align: top;
+}
