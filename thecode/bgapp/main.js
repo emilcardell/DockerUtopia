@@ -1,0 +1,1 @@
+require('./backgroundWorker.js').start();
