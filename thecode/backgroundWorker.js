@@ -10,29 +10,27 @@ var connection = amqp.createConnection({ host: config.RabbitMqUrl });
 
 exports.start = function () {
 
-		// Wait for connection to become established.
+	// Wait for connection to become established.
 	connection.on('ready', function () {
 		// Use the default 'amq.topic' exchange
 		connection.queue('todoCreated', function(q){
 			// Catch all messages
 			q.bind('#');
 
-			// Receive messages
-			q.subscribe(function (message) {
-			// Print messages to stdout
-			console.log(JSON.stringify(message));
-			}
-		}
+			q.subscribe(function (taskToCreate) {
 
-		connection.queue('todoDone', function(q){
-			// Catch all messages
-			q.bind('#');
-
-			// Receive messages
-			q.subscribe(function (message) {
-			// Print messages to stdout
-			console.log(JSON.stringify(message));
-			}
-		}
-	}
+				client.index({
+		          index: 'todos',
+		          type: 'todo',
+		          id: taskToCreate.Id,
+		          body: taskToCreate
+		        }, function (err, contentResp) {
+		          if(err){
+		            console.log(JSON.stringify(err));
+		          }
+		        });
+			
+			});
+		});
+	});
 }

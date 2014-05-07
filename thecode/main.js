@@ -14,13 +14,10 @@ var connection = amqp.createConnection({ host: config.RabbitMqUrl });
 
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
 
-/*
-app.configure(function(){
-  app.use(express.bodyParser());
-  app.use(app.router);
-});
-*/
+app.use(bodyParser());
+
 app.use("/", express.static(__dirname + "/static"));
 
 app.get("/", function(req, resp){
@@ -28,37 +25,73 @@ app.get("/", function(req, resp){
 });
 
 app.get("/tasks", function(req, resp){
-  req.json([]);
-  //List form elastic search
+  var query = req.query.query;
+  
+  if(!query){
+    client.search({
+      index: 'todos',
+      size: 1000,
+      body: {
+        query: {
+          "match_all" : { }
+        },
+        sort: [
+              { Created: "desc" }
+          ]
+      }
+    }).then(function (searchResp) {
+      
+      var result = searchResp.hits.hits.map(function(hit){
+        return hit._source;
+      });
+
+      return resp.json({ TotalHits: searchResp.hits.total, Result: result });
+    },function (error) {
+      return resp.json({ TotalHits: 0, Result: [] });
+    });
+  }
+  else
+  {
+     client.search({
+      index: 'todos',
+      size: 1000,
+      body: {
+        query: {
+          "wildcard" : {
+            "Body" : query + "*"
+          }
+        },
+        sort: [
+              { Created: "desc" }
+          ]
+      }
+    }).then(function (searchResp) {
+      
+      var result = searchResp.hits.hits.map(function(hit){
+        return hit._source;
+      });
+
+      return resp.json({ TotalHits: searchResp.hits.total, Result: result });
+    },function (error) {
+      return resp.json({ TotalHits: 0, Result: [] });
+    });
+
+  }
+
+
 });
 
 app.post("/task", function(req, resp){
   var taskToCreate = req.body;
+  if(!taskToCreate || !taskToCreate.Body){
+    return resp.send(400);
+  }
+
   taskToCreate.Id = uuid.v1();
   taskToCreate.Created = new Date();
 
-   client.index({
-          index: 'todos',
-          type: 'todo',
-          id: taskToCreate.Id,
-          body: taskToCreate
-        }, function (err, contentResp) {
-          if(err){
-            console.log(err);        
-            return resp.send(500);
-          }
-          else
-          {
-            //Send to queue
-            connection.publish("todoCreated", taskToCreate);
-            return resp.json(taskToCreate);            
-          }
-        });
-});
-
-app.post("/done", function(req, resp){
-  req.send(200);
-  //Send to rabbitMQ
+  connection.publish("todoCreated", taskToCreate);
+  return resp.json(taskToCreate);            
 });
 
 
@@ -71,6 +104,7 @@ client.indices.exists({
         return;
    };
 
+  //setting up indices
    if(!response){
      client.indices.create({
        index: 'todos',
@@ -78,19 +112,19 @@ client.indices.exists({
        mappings : {
              "todo" : {
                  "properties" : {
+                  "Id" : { 
+                     "type" : "string",
+                     "index" : "not_analyzed"                      
+                   },
                  "Body" : { 
                      "type" : "string",
                      "index" : "analyzed"                      
                    },
-                  "Done" : { 
-                     "type" : "boolean",
-                     "index" : "analyzed"                      
-                   },
                    "Created" : {
                      "type" : "date",
-                     "index" : "analyzed"  
+                     "index" : "analyzed",
+                     "format" : "date_time"  
                    } 
-
                }
            }
              
@@ -104,4 +138,5 @@ client.indices.exists({
    }
 });
 
+require('./backgroundWorker.js').start();
 app.listen(8888);
