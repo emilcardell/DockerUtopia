@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Discovering developer utopia with docker.io</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -13,22 +13,20 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-		<link rel="stylesheet" href="css/reveal.min.css">
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700|Roboto+Condensed:700|Roboto:700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/unwillingcoder.css" id="theme">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<!-- Include the appropriate print stylesheet -->
 		<script>
-			if( window.location.search.match( /print-pdf/gi ) ) {
-				var link = document.createElement( 'link' );
-				link.rel = 'stylesheet';
-				link.type = 'text/css';
-				link.href = 'css/print/pdf.css';
-				document.getElementsByTagName( 'head' )[0].appendChild( link );
-			}
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 
 		<!--[if lt IE 9]>
@@ -41,13 +39,12 @@
 		<div class="reveal">
 
 			<!-- Any section element inside of this container is displayed as a slide -->
+			<d<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
 					<h1>Discovering developer utopia </h1>
-					<h3>with docker.io</h3>
-					<p>
-						<small>with <a href="http://twitter.com/emilcardell">@emilcardell</a></small>
-					</p>
+					<p>with docker.io</p>
+					
 				</section>
 
 				<section  data-background="images/hurtlocker.jpg" data-background-repeat="no-repeat">
@@ -59,15 +56,34 @@
 					</aside>				
 				</section>
 
-				<section  data-background="images/utopia.jpg" data-background-repeat="no-repeat">
+				<section  data-background="images/Cozumel-Karin-Arvidsson.jpg" data-background-repeat="no-repeat">
+					<aside class="notes">
+						Photo by Karin Arvidsson.<br /><br />
+						Utopia == community or society possessing highly desirable or near perfect qualities.
+					</aside>
 				</section>
 
-				<section  data-background="images/failUtopia.jpg" data-background-repeat="no-repeat">
+				<section  data-background="images/Gustavia-StBarth--Jenny-Unnegard.jpg" data-background-repeat="no-repeat">
+					<aside class="notes">
+						Photo by Jenny Unnegård.
+					</aside>
+				</section>
+
+				<section  data-background="images/Battle-Ship_Island_Nagasaki_Japan--kntrty.jpg" data-background-repeat="no-repeat">
+					<aside class="notes">
+						Photo by kntrty on Flickr.
+					</aside>
+				</section>
+
+				<section  data-background="images/Stairway_to_Hell--Jordy-Theiller.jpg" data-background-repeat="no-repeat">
+					<aside class="notes">
+						Photo by Jordy Theiller
+					</aside>
 				</section>
 
 				<section>
 					<h1>Ideal developer society</h1>
-					<h3>Where all applications are happy</h3>
+					<p>Where all applications are happy</p>
 					
 
 					<aside class="notes">
@@ -80,7 +96,8 @@
 					<p>control those things that are within our power (namely our beliefs, judgments, desires , and attitudes) and be indifferent or apathetic to those things which are not in our power (namely, things external to us)</p>
 				</section>
 
-				<section>
+				<section data-background-video="/videos/selfie.webm">
+					
 					<h1>Selfie</h1>
 					<ul style="list-style:none; margin:0; padding:0; text-align: center;">
 						<li class="fragment" data-fragment-index="1">Developer happiness ???</li>
@@ -88,7 +105,8 @@
 					</ul>
 					<aside class="notes">
 						Work at Thomas Cook NE.<br />
-						.net developer.
+						.net developer.<br />
+						Machocistic tendencies
 					</aside>
 				</section>
 
@@ -103,7 +121,10 @@
 					</aside>
 				</section>
 
-				<section  data-background="images/whale.jpg" data-background-repeat="no-repeat">
+				<section  data-background="images/Jumping_Humpback_whale--Zorankovacevic.jpg" data-background-repeat="no-repeat">
+				<aside class="notes">
+					Photo by Zorankovacevic
+				</aside>
 				</section>
 
 				<section>
@@ -159,13 +180,13 @@
 				</section>
 
 				<section>
-					<h1>Name<h1>
-					<p>-name myDb<p>									
+					<h1>Naming</h1>
+					<p>--name myContainer</p>									
 				</section>
 
 				<section>
 					<h1>Managing ports</h1>
-					<p>-p 5000:5000<p>									
+					<p>-p 5000:5000</p>									
 				</section>
 
 				<section>
@@ -177,31 +198,96 @@
 					<aside class="notes">
 						Key to success. <br />
 						Save incrimental change. <br />
-						Discuss base images.
+						Discuss base images. <br />
+						Show docker index if internet is working.
 					</aside>					
 				</section>
 
 				<section>
+					<h1>Put it in production</h1>
+					<p>creating value</p>				
+				</section>
+
+				<section>
+					<h1>Happy time</h1>
+					<p>again</p>
+					<aside class="notes">
+						Time dependen.
+						1. Show full app with linked stuff.
+						2. Show background worker as own app.
+					</aside>
+				</section>
+
+				<section>
 					<h1>Dockerfile</h1>
-					<p>build ...</p>				
+					<p>where the magic happens</p>				
 				</section>
 
 				<section>
 					<h1>Linking it togheader</h1>
-					<p>linking example single and multiple</p>				
+					<p>-link theapp:elasticsearch -link theapp:rabbitmq</p>				
 				</section>
 
 				<section>
 					<h1>Building</h1>
-					<p>Show build.sh in slide</p>
+					<p>bash FTW!</p>
 					<aside class="notes">
 						Nginx to create own mini server "cloud".
 					</aside>					
 				</section>
 
 				<section>
+					<pre class="stretch"><code data-trim contenteditable>
+						#!/bin/sh
+npm install
+docker build -t emilcardell/theapp .
+
+if docker ps | grep -q elasticsearch; then 
+		echo "The elasticsearch is RUNNING";
+	else
+		echo "Starting elasticsearch";
+		docker run -d --name elasticsearch dockerfile/elasticsearch
+fi
+
+if docker ps | grep -q rabbitmq; then 
+		echo "The rabbitmq is RUNNING";
+	else
+		echo "Starting rabbitmq";
+		docker run -d -p 5672:5672 --name rabbitmq emilcardell/rabbitmq
+fi
+
+
+if docker ps | grep -q theapp; then 
+
+echo "kill and remove"
+docker kill theapp
+docker rm theapp
+
+echo "remove link"
+docker rm -link theapp/elasticsearch
+docker rm -link theapp/rabbitmq
+
+fi
+
+echo "run docker"
+docker run -d -link theapp:elasticsearch -link theapp:rabbitmq -name theapp emilcardell/theapp
+
+echo "Check if all containers are running"
+if docker ps | grep -q theapp; then 
+		echo "The theapp is RUNNING";
+	else
+		echo "The theapp is DOWN";
+		exit 1 
+fi
+
+
+exit $?
+					</code></pre>
+				</section>
+
+				<section>
 					<h1>Testing</h1>
-					<p>drone.io</p>
+					<p>drone.io - <a href="https://github.com/drone/drone">https://github.com/drone/drone</a></p>
 				</section>
 
 				<section>
@@ -228,7 +314,11 @@
 				<section>
 					<h1>Farwell</h1>
 					<p>
-						<small><a href="http://twitter.com/emilcardell">@emilcardell</a></small>
+					<br />
+					Twitter:<br />
+						<a href="http://twitter.com/emilcardell">@emilcardell</a><br /><br />
+						Code and slides:<br />
+						<a href="https://github.com/emilcardell/DockerUtopia">https://github.com/emilcardell/DockerUtopia</a><br />
 					</p>
 				</section>					
 
@@ -240,7 +330,7 @@
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
+		<script src="js/reveal.js"></script>
 
 		<script>
 
@@ -253,7 +343,7 @@
 				center: true,
 
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+				transition: Reveal.getQueryHash().transition || 'slide', // none/fade/slide/convex/concave/zoom
 
 				// Parallax scrolling
 				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',

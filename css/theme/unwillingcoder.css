@@ -54,7 +54,7 @@ body {
   font-size: 36px;
   font-weight: 200;
   letter-spacing: -0.02em;
-  color: #657b83; }
+  color: #333; }
 
 ::selection {
   color: white;
@@ -71,16 +71,15 @@ body {
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #333;
-  font-family: "Roboto Condensed", Impact, sans-serif;
+  color: #b0b0b0;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 700;
   line-height: 0.9em;
   letter-spacing: 0.02em;
-  text-transform: uppercase;
-  font-weight: 700;
   text-shadow: none; }
 
 .reveal h1 {
-  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2); }
+  font-size: 2.2em; }
 
 /*********************************************
  * LINKS
