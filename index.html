@@ -231,31 +231,6 @@
 				</section>
 
 				<section>
-					<pre class="stretch"><code data-trim contenteditable>
-docker build -t emilcardell/theapp .
-if docker ps | grep -q theapp; then 
-	docker kill theapp
-	docker rm theapp
-	docker rm -link theapp/elasticsearch
-	docker rm -link theapp/rabbitmq
-fi
-
-docker run -d -link theapp:elasticsearch -link theapp:rabbitmq -name theapp emilcardell/theapp
-
-echo "Check if theapp container is running"
-if docker ps | grep -q theapp; then 
-		echo "The theapp is RUNNING";
-	else
-		echo "The theapp is DOWN";
-		exit 1 
-fi
-
-
-exit $?
-					</code></pre>
-				</section>
-
-				<section>
 					<h1>Testing</h1>
 					<ul style="list-style:none; margin:0; padding:0; text-align: center;">
 						<li class="fragment" data-fragment-index="1">drone.io - <a href="https://github.com/drone/drone">https://github.com/drone/drone</a></li>						
