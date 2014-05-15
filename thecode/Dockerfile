@@ -1,4 +1,4 @@
-FROM    ubuntu:saucy
+FROM ubuntu:trusty
 
 # Install Node.js
 RUN apt-get install -y software-properties-common
@@ -8,9 +8,6 @@ RUN apt-get install -y nodejs
 
 # Append to $PATH variable.
 RUN echo '\n# Node.js\nexport PATH="node_modules/.bin:$PATH"' >> /root/.bash_profile
-
-# Install graphicsmagick
-RUN apt-get install graphicsmagick -y
 
 # Bundle app source
 ADD . /src
