@@ -1,3 +1,0 @@
-echo "Creating mongo-user"
-docker pull dockerfile/elasticsearch
-docker run -d -name elasticsearch-content dockerfile/elasticsearch

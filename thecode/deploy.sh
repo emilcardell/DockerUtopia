@@ -30,7 +30,7 @@ docker rm -link theapp/rabbitmq
 fi
 
 echo "run docker"
-docker run -d -link theapp:elasticsearch -link theapp:rabbitmq -name theapp emilcardell/theapp
+docker run -d -p 8888:8888 --link elasticsearch:theapp --link rabbitmq:theapp --name theapp emilcardell/theapp
 
 echo "Check if all containers are running"
 if docker ps | grep -q theapp; then 
