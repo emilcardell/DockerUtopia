@@ -169,9 +169,9 @@ body {
 #selfie .selfie-canvas {
   background-color: #fff;
   opacity: 0.9;
-  width: 10em;
+  width: 15em;
   padding: 1em;
-  margin-left: 20em;
+  margin-left: 15em;
 }
 
 #quote .leftBubble {
@@ -179,8 +179,8 @@ body {
   opacity: 0.6;  
   padding: 0.6em;
   position: absolute;
-  left: -300px;
-  top: 300px;
+  left: -100px;
+  top: -200px;
 }
 
 #quote .rightBubble {
@@ -188,8 +188,8 @@ body {
   opacity: 0.6;  
   padding: 0.6em;
   position: absolute;
-  left: 700px;
-  top: 150px;
+  left: -100px;
+  top: -90px;
   width: 380px;
 }
 

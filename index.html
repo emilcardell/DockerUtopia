@@ -101,8 +101,10 @@
 					<div class="selfie-canvas">
 						<h1>Selfie</h1>
 						<ul style="list-style:none; margin:0; padding:0; text-align: center;">
-							<li class="fragment" data-fragment-index="1">Developer happiness</li>
-							<li class="fragment" data-fragment-index="2">Humble anarchy</li>
+							<li class="fragment" data-fragment-index="1">Developer happiness advocate</li>
+							<li class="fragment" data-fragment-index="2">Humble anarchist</li>
+							<li class="fragment" data-fragment-index="3">Drinker of espressos</li>
+							<li class="fragment" data-fragment-index="4">Wearer of head phones</li>
 						</ul>
 					</div>
 					<aside class="notes">
@@ -150,6 +152,31 @@
 				</section>
 
 				<section>
+					<h1>It's open source</h1>
+					<p>Written in Golang</p>
+				</section>
+
+				<section>
+					<h1>Runs on linux</h1>
+					<p>The majority of them</p>
+				</section>
+
+				<section>
+					<h1>Multiple container OS</h1>
+					<p>Ubuntu, Centos and more</p>
+				</section>
+
+				<section>
+					<h1>Running on Windows</h1>
+					<p>VirtualBox and Vagrant</p>
+				</section>
+
+				<section>
+					<h1>Running on OSX</h1>
+					<p>VirtualBox and boot2docker</p>
+				</section>
+				
+				<section>
 					<h1>Lets check out some code</h1>
 					<p>Fresh from github</p>
 					<aside class="notes">
@@ -189,19 +216,39 @@
 					</aside>					
 				</section>
 
-				<section>
-					<h1>Lets get it in production</h1>
-					<p>Creating value</p>				
+				<section data-background="/graphics/scene01.svg" data-background-repeat="no-repeat">								
+				</section>
+				<section data-background="/graphics/scene02.svg" data-background-repeat="no-repeat">								
+				</section>
+				<section data-background="/graphics/scene03.svg" data-background-repeat="no-repeat">								
+				</section>
+				<section data-background="/graphics/scene04.svg" data-background-repeat="no-repeat">								
+				</section>
+				<section data-background="/graphics/scene05.svg" data-background-repeat="no-repeat">								
+				</section>
+				<section data-background="/graphics/scene06.svg" data-background-repeat="no-repeat">								
+				</section>
+				<section data-background="/graphics/scene07.svg" data-background-repeat="no-repeat">								
+				</section>
+				<section data-background="/graphics/scene08.svg" data-background-repeat="no-repeat">								
+				</section>
+				<section data-background="/graphics/scene09.svg" data-background-repeat="no-repeat">								
 				</section>
 
 				<section>
-					<h1>Lets check out some code</h1>
-					<p>Again</p>					
+					<h1>Lets get it in production</h1>
+					<p>More code</p>				
 				</section>
 
 				<section>
 					<h1>Dockerfile</h1>
-					<p>where the magic happens</p>				
+					<ul style="list-style:none; margin:0; padding:0; text-align: center;">
+						<li class="fragment" data-fragment-index="1">FROM</li>
+						<li class="fragment" data-fragment-index="2">RUN</li>
+						<li class="fragment" data-fragment-index="3">EXPOSE</li>
+						<li class="fragment" data-fragment-index="4">CMD</li>
+						<li class="fragment" data-fragment-index="5">ENTRYPOINT</li>
+					</ul>					
 				</section>
 
 				<section>
@@ -224,12 +271,19 @@
 
 				<section>
 					<h1>Building</h1>
-					<p>bash FTW!</p>
-					<aside class="notes">
-						Nginx to create own mini server "cloud".
-					</aside>					
+					<p>Bash and nginx goes a long way</p>					
 				</section>
 
+				<section>
+					<pre><code data-trim contenteditable>
+if docker ps | grep -q elasticsearch; then 
+	echo "The elasticsearch is RUNNING";
+else
+	echo "Starting elasticsearch";
+	docker run -d --name elasticsearch dockerfile/elasticsearch
+fi
+					</code></pre>
+				</section>
 				<section>
 					<h1>Testing</h1>
 					<ul style="list-style:none; margin:0; padding:0; text-align: center;">
@@ -253,7 +307,6 @@
 
 				<section>
 					<h1>Speed up your development setup</h1>
-					<p>Let some one else do the hard work</p>
 				</section>
 
 				<section>
@@ -267,6 +320,11 @@
 
 				<section>
 					<h1>Get more software in production</h1>
+				</section>
+
+				<section>
+					<h1>Getting started</h1>
+					<p><a href="https://www.docker.io/">https://www.docker.io/</a></p>
 				</section>
 
 				<section>
