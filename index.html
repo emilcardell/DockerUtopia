@@ -47,21 +47,6 @@
 					
 				</section>
 
-				<section  data-background="images/hurtlocker.jpg" data-background-repeat="no-repeat" id="quote">
-					
-					<ul style="list-style:none; margin:0; padding:0; text-align: center;">
-							<li class="fragment leftBubble" data-fragment-index="1">What's the best way to... go about disarming one of these things?</li>
-							<li class="fragment rightBubble" data-fragment-index="2">The way you don't die, sir.</li>
-						</ul>
-
-					<aside class="notes">
-						The Hurt Locker (2008)<br/>
-						Sergeant First Class William James - Jeremy Renner<br/>
-						Colonel Reed: What's the best way to... go about disarming one of these things?<br/>
-						Staff Sergeant William James: The way you don't die, sir.
-					</aside>				
-				</section>
-
 				<section  data-background="images/Cozumel-Karin-Arvidsson.jpg" data-background-repeat="no-repeat">
 					<aside class="notes">
 						Photo by Karin Arvidsson.<br /><br />
@@ -97,20 +82,16 @@
 					</aside>
 				</section>
 
-				<section id="selfie" data-background-video="/videos/selfie.webm">
+				<section data-background="/images/memyselfandmud.jpg">
 					<div class="selfie-canvas">
-						<h1>Selfie</h1>
-						<ul style="list-style:none; margin:0; padding:0; text-align: center;">
-							<li class="fragment" data-fragment-index="1">Developer</li>
-							<li class="fragment" data-fragment-index="2">Embrace disorder</li>
-							<li class="fragment" data-fragment-index="3">Self inflicted pain</li>
-							
+						<h2 style="text-align: left;">Selfie</h2>
+						<ul style="list-style:none; margin:0; padding:0; margin-left: 0;">
+							<li class="fragment" data-fragment-index="1">Run obstacle courses</li>
+							<li class="fragment" data-fragment-index="2">Huge love for coding</li>
+							<li class="fragment" data-fragment-index="3">Full stack C#/Node</li>							
+							<li class="fragment" data-fragment-index="4">Competitive gaming fan</li>
 						</ul>
 					</div>
-					<aside class="notes">
-						Work at Thomas Cook NE.<br />
-						.net developer.<br />
-					</aside>
 				</section>
 
 				<section>
@@ -138,7 +119,7 @@
 				</section>
 
 				<section>
-					<h1>Linux virtual machines</h1>
+					<h1>Tiny linux virtual machines</h1>
 					<p>With shared resources and built in API</p>
 				</section>
 
@@ -154,58 +135,32 @@
 
 				<section>
 					<h1>Runs on linux</h1>
-					<p>The majority of them</p>
+					<p>All the big ones</p>
 				</section>
 
 				<section>
 					<h1>Multiple container OS</h1>
-					<p>Ubuntu, Centos and more</p>
+					<p>Ubuntu, Centos and more.</p>
 				</section>
 
 				<section>
 					<h1>Running on Windows</h1>
-					<p>VirtualBox and boot2docker</p>
+					<p>VirtualBox and boot2docker (Used to be vagrant)</p>
 				</section>
 
 				<section>
 					<h1>Running on OSX</h1>
 					<p>VirtualBox and boot2docker</p>
 				</section>
-				
-				<section>
-					<h1>Lets check out some code</h1>
-					<p>Fresh from github</p>
-					<aside class="notes">
-						Show the code!
-					</aside>
-				</section>
 
 				<section>
 					<h1>Images are blueprints</h1>
-					<p>A container is an instance</p>				
+					<p>A container is an instance</p>			
 				</section>
 
 				<section>
-					<h1>Basic commands</h1>
-					<ul style="list-style:none; margin:0; padding:0; text-align: center;">
-						<li class="fragment" data-fragment-index="1">ps</li>
-						<li class="fragment" data-fragment-index="2">ps -a</li>
-						<li class="fragment" data-fragment-index="3">run</li>
-						<li class="fragment" data-fragment-index="4">kill</li>
-						<li class="fragment" data-fragment-index="5">start</li>
-						<li class="fragment" data-fragment-index="6">rm</li>
-						<li class="fragment" data-fragment-index="7">rmi</li>
-					</ul>				
-				</section>
-
-				<section>
-					<h1>Naming</h1>
-					<p>--name myContainer</p>									
-				</section>
-
-				<section>
-					<h1>Managing ports</h1>
-					<p>-p 5000:5000</p>									
+					<h1>Stateless vs persistent applications</h1>
+					<p>Mounted folders than can be shared.</p>			
 				</section>
 
 				<section>
@@ -218,6 +173,51 @@
 						Show docker index if INTERNET is working.
 					</aside>					
 				</section>
+				
+				<section>
+					<h1>Lets started with development</h1>
+					<p>Fresh from github</p>
+					<aside class="notes">
+						Show the code!
+					</aside>
+				</section>
+
+				<section>
+					<h1>Basic commands</h1>
+					<ul style="list-style:none; margin:0; padding:0; text-align: center;">
+						<li class="fragment" data-fragment-index="1">ps</li>
+						<li class="fragment" data-fragment-index="2">ps -a</li>
+						<li class="fragment" data-fragment-index="3">run</li>
+						<li class="fragment" data-fragment-index="3">run -d</li>
+						<li class="fragment" data-fragment-index="4">kill</li>
+						<li class="fragment" data-fragment-index="5">start</li>
+						<li class="fragment" data-fragment-index="6">rm</li>
+					</ul>				
+				</section>
+
+				<section>
+					<h1>More advanced commands</h1>
+					<ul style="list-style:none; margin:0; padding:0; text-align: center;">
+						<li class="fragment" data-fragment-index="1">images</li>
+						<li class="fragment" data-fragment-index="2">pull</li>
+						<li class="fragment" data-fragment-index="3">rmi</li>
+						<li class="fragment" data-fragment-index="4">inspect</li>
+						<li class="fragment" data-fragment-index="5">logs</li>
+
+					</ul>				
+				</section>
+
+				<section>
+					<h1>Naming</h1>
+					<p>--name myContainer</p>									
+				</section>
+
+				<section>
+					<h1>Managing ports</h1>
+					<p>-p 5000:5000</p>
+				</section>
+
+
 
 				<section data-background="/graphics/scene01.svg" data-background-repeat="no-repeat">								
 				</section>
@@ -292,6 +292,20 @@ fi
 					<ul style="list-style:none; margin:0; padding:0; text-align: center;">
 						<li class="fragment" data-fragment-index="1">drone.io - <a href="https://github.com/drone/drone">https://github.com/drone/drone</a></li>						
 					</ul>
+				</section>
+
+				<section>
+					<h1>Monitoring</h1>
+					<ul style="list-style:none; margin:0; padding:0; text-align: center;">
+						<li class="fragment" data-fragment-index="1">Dockerana<a href="https://github.com/drone/drone">http://dockerana.com</a></li>
+						<li class="fragment" data-fragment-index="2">Datadog<a href="https://github.com/drone/drone">https://www.datadoghq.com</a></li>							
+					</ul>
+				</section>
+
+				<section>
+					<h1>The future</h1>
+					<li class="fragment" data-fragment-index="1">More and more tooling and hosting options</li>
+					<li class="fragment" data-fragment-index="2">Windows hosting and containers</li>
 				</section>
 
 				<section  data-background="images/Jumping_Humpback_whale--Zorankovacevic.jpg" data-background-repeat="no-repeat" id="happy">

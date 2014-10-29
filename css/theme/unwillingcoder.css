@@ -208,3 +208,12 @@ body {
   font-size: 1.8em;
 
 }
+
+.reveal .selfie-canvas {
+  margin-right: 27em;
+  width: 20em;
+}
+
+.reveal .selfie-canvas ul {
+  width: 20em;
+}

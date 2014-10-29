@@ -142,3 +142,12 @@ body {
  *********************************************/
 .reveal .slide-number {
   color: #268bd2; }
+
+.reveal .selfie-canvas {
+  margin-right: 27em;
+  width: 20em;
+}
+
+.reveal .selfie-canvas ul {
+  width: 20em;
+}
